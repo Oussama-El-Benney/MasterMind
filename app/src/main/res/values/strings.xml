@@ -1,20 +1,21 @@
 <resources>
     <string name="app_name">MasterMind</string>
     <string name="titre">MasterMind</string>
-    <string name="def">c\'est quoi MasterMind??</string>
+    <string name="def">what is MasterMind??</string>
     <string name="name">"Enter your Name "</string>
     <string name="play">Start </string>
     <string name="notifErreur">"Please enter your username "</string>
     <string name="notifErreurRb">"Please choose from the option</string>
     <string name="notifRechoice">"Please choose again  its a draw</string>
 
-    <string name="pick">Enter Your Choice</string>
+    <string name="pick">Pc picked up a number Try Guessing it</string>
     <string name="stars">****</string>
     <string name="txtsurrender">if you want to surrender you\'ll view results here</string>
     <string name="btnsurrender">Surrender</string>
-    <string name="correct">The Correct Result Is</string>
+    <string name="btnInfo">info</string>
+    <string name="correct">The Correct Result Is : </string>
 
-    <string name="confirm">-></string>
+    <string name="confirm">Confirm</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

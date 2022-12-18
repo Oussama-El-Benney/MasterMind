@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@color/background"
+    android:background="@drawable/img_1"
     >
 
     <LinearLayout
@@ -22,7 +22,7 @@
             android:layout_margin="20dp"
             android:text="@string/titre"
             android:textStyle="bold"
-            android:textColor="@color/SecondColorVache"
+            android:textColor="@color/txt"
             android:textSize="50sp"/>
 
         <ImageView
@@ -30,19 +30,13 @@
             android:layout_width="300dp"
             android:layout_height="200dp"
             android:layout_margin="20dp"
-            app:srcCompat="@drawable/vache" />
+            app:srcCompat="@drawable/mm" />
 
-        <TextView
-            android:id="@+id/whatIsMasterMind"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:textSize="30sp"
-            android:text="@string/def" />
+
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_margin="20dp">
 
@@ -62,9 +56,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
-                android:textColor="@color/SecondColorVache"
+                android:textColor="@color/txt"
+                android:backgroundTint="@color/densebg"
                 android:text="@string/play" />
         </LinearLayout>
+        <TextView
+            android:id="@+id/whatIsMasterMind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="40dp"
+            android:textSize="22sp"
+            android:gravity="center"
+            android:text="@string/def" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

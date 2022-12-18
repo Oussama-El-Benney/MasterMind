@@ -15,4 +15,14 @@
     <color name="firstColorVache">#D80200</color>
     <color name="SecondColorVache">#7E0001</color>
     <color name="diffColorVache">#F66100</color>
+
+
+<!--    newtyle-->
+    <color name="densebg">#CDBEFFF5</color>
+    <color name="txt">#00BC9D</color>
+    <color name="darken">#008878</color>
+    <color name="diff">#00D9B6</color>
+
+    <color name="densebgwrn">#FFCCBF</color>
+    <color name="txtwrn">#FA8E73</color>
 </resources>

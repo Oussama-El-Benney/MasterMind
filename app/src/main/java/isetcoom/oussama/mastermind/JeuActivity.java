@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.Random;
@@ -14,10 +15,12 @@ import java.util.Random;
 public class JeuActivity extends AppCompatActivity {
     int codeAlea ;
     EditText userTry;
-    Button btnConfirm,btnSurrender;
+    Button btnConfirm,btnSurrender,btnRestart;
     TextView tvResult,tvResults;
     String strcodeAlea;
     int vache,taureau,tries=0;
+    LinearLayout mainlayout,fragmenttLayout,restartlayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,8 +28,14 @@ public class JeuActivity extends AppCompatActivity {
         userTry = this.findViewById(R.id.userTry);
         btnConfirm = this.findViewById(R.id.confirm);
         btnSurrender = this.findViewById(R.id.btnSurrender);
+        btnRestart = this.findViewById(R.id.btnRestart);
         tvResult = this.findViewById(R.id.tvResult);
         tvResults = this.findViewById(R.id.tvResults);
+        mainlayout=(LinearLayout)this.findViewById(R.id.llgame);
+        restartlayout=(LinearLayout)this.findViewById(R.id.llh);
+        fragmenttLayout=(LinearLayout)this.findViewById(R.id.fragentLayout);
+
+
         codeAlea = genererCode();
         strcodeAlea = Integer.toString(codeAlea);
 
@@ -51,7 +60,7 @@ public class JeuActivity extends AppCompatActivity {
                         vache++;
                     }
                 }
-                tvResults.setText("\nNum :"+userInput+" : Vache="+vache+": Teaureau="+taureau+tvResults.getText());
+                tvResults.setText("Num :"+userInput+" : Vache="+vache+": Teaureau="+taureau+"\n"+tvResults.getText());
 
             }
         });
@@ -61,7 +70,19 @@ public class JeuActivity extends AppCompatActivity {
             public void onClick(View view) {
                 tvResult.setText("the Correct Answer is"+codeAlea);
                 lose(view);
-
+                mainlayout.setVisibility(View.GONE);
+                restartlayout.setVisibility(View.VISIBLE);
+                fragmenttLayout.setVisibility(View.VISIBLE);
+            }
+        });
+        btnRestart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragmenttLayout.setVisibility(View.GONE);
+                mainlayout.setVisibility(View.VISIBLE);
+                codeAlea = genererCode();
+                tvResults.setText("");
+                restartlayout.setVisibility(View.GONE);
             }
         });
 

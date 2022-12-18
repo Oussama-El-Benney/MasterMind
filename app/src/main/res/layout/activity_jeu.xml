@@ -4,9 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@drawable/img_1"
     tools:context=".JeuActivity">
 
+    <Button
+        android:id="@+id/btnInfo"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/densebg"
+        android:padding="1dp"
+        android:text="@string/btnInfo"
+        android:textColor="@color/txt"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/llv"
@@ -25,7 +39,7 @@
             android:layout_margin="20dp"
             android:text="@string/titre"
             android:textAlignment="center"
-            android:textColor="@color/SecondColor"
+            android:textColor="@color/darken"
             android:textSize="50sp"
             android:textStyle="bold" />
 
@@ -35,10 +49,11 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="@string/pick"
-            android:textColor="@color/SecondColor"
+            android:textColor="@color/darken"
             android:textSize="20sp" />
 
         <LinearLayout
+            android:id="@+id/llgame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
@@ -51,40 +66,46 @@
                 android:layout_weight="1"
                 android:background="@drawable/edit_text_style"
                 android:ems="10"
-                android:inputType="number"
-                android:padding="8dp"
-                android:textSize="20sp"
                 android:gravity="center"
-                android:hint="@string/stars"/>
+                android:hint="@string/stars"
+                android:inputType="number"
+                android:padding="1dp"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/confirm"
-                android:layout_width="80dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="20dp"
+                android:backgroundTint="@color/densebg"
                 android:text="@string/confirm"
-                android:textColor="@color/SecondColor" />
+                android:textColor="@color/txt"
+                android:textSize="11sp" />
+
             <Button
                 android:id="@+id/btnSurrender"
                 android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:backgroundTint="@color/densebgwrn"
                 android:text="@string/btnsurrender"
-                android:textColor="@color/white"
-                android:backgroundTint="@color/diffColor"/>
+                android:textColor="@color/txtwrn"
+                android:textSize="11sp" />
 
         </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="160dp"
             android:layout_weight="1">
 
             <LinearLayout
+                android:id="@+id/scroll"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tvResults"
@@ -96,38 +117,80 @@
                     android:textSize="20sp" />
             </LinearLayout>
         </ScrollView>
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:orientation="horizontal">-->
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+        <!--            <Button-->
+        <!--                android:id="@+id/btnSurrenderss"-->
+        <!--                android:layout_width="140dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_gravity="center"-->
+        <!--                android:text="@string/btnsurrender"-->
+        <!--                android:textColor="@color/SecondColor" />-->
 
-            <Button
-                android:id="@+id/btnSurrenderss"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/btnsurrender"
-                android:textColor="@color/SecondColor" />
+        <!--            <TextView-->
+        <!--                android:id="@+id/tvResultss"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:text="@string/txtsurrender"-->
+        <!--                android:textColor="@color/darken"-->
+        <!--                android:textSize="20sp" />-->
 
-            <TextView
-                android:id="@+id/tvResult"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/txtsurrender"
-                android:textColor="@color/SecondColor"
-                android:textSize="20sp" />
-
-        </LinearLayout>
+        <!--        </LinearLayout>-->
 
     </LinearLayout>
-<!--    <androidx.fragment.app.FragmentContainerView-->
-<!--        android:id="@+id/fragplace"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/llv" />-->
 
+    <LinearLayout
+        android:id="@+id/llh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llv">
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text=""
+            android:textColor="@color/darken"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:backgroundTint="@color/densebg"
+            android:text="Restart"
+            android:textColor="@color/txt"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llh">
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragplace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/llv" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
